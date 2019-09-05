@@ -17,7 +17,7 @@ function get(x){
     var game1Title = get("answerOne").innerHTML = "I am Presently Tense!";
     var game2Title = get("answerTwo").innerHTML = "I used to be Imperfectly Tense!";
     var game3Title = get("answerThree").innerHTML = "Yesterday I had some Perfectly Tense Moments!";
-    var game4Title = get("answerFour").innerHTML = "";
+    var game4Title = get("answerFour").innerHTML = "I'm all Mixed Up!";
 
 
 //This sets up the name of the app and four seoparate games
@@ -52,7 +52,7 @@ var verbsFirstPer = [["Amav", "loved"], ["laborav", "worked"], ["habitav", "live
 
 var perEndingsFirst = [["ō", "I am "], ["ās", "You are "], ["at", "She/he/it is "], ["āmus", "We are "], ["ātis", "Ya'll are "], ["ant", "They are "]];
 
-var perEndingsFirstImp = [["ābam", "I was "], ["ãbas", "You were "], ["ābat", "She/he/it was "], ["ābamus", "We were "], ["ābatis", "Ya'll were "], ["ābant", "They were "]];
+var perEndingsFirstImp = [["ābam", "I was "], ["ābas", "You were "], ["ābat", "She/he/it was "], ["ābamus", "We were "], ["ābatis", "Ya'll were "], ["ābant", "They were "]];
 
 var perEndingsFirstPerfect = [["ī", "I "], ["isti", "You "], ["it", "She/he/it "], ["imus", "We "], ["istis", "Ya'll "], ["ērunt", "They "]];
 
@@ -65,7 +65,7 @@ var answers = ["answerOne", "answerTwo", "answerThree", "answerFour"];
 //Random index for Shuffle
 	 var randomIndex = 0;
 
-	 
+
 
 function gameOverAudio(){
        var gameOverAudio = document.getElementById("gameOverAudio");
@@ -93,7 +93,7 @@ function wrongAnswerAudio(){
     var pointsPerCorrectAnswer = 10;
 
     //var gameOneChosen = false;
-    	 
+
 
     function addPoints(){
     	points += pointsPerCorrectAnswer;
@@ -117,7 +117,7 @@ function decrementCount(){
 	count--;
 }
 
-    
+
 //Timer variables
 var timeleft = 15;
 var countdown = setInterval(x,1000);
@@ -143,20 +143,20 @@ function countDownTimer(){
   }
 
 }
-    
-  
 
- 	 
+
+
+
 
 function stopTimer() {
 
-	 
+
 	clearInterval(countdown);
-	 
-	 
+
+
 }
 
- 
+
 
 //This randomizes an array. The parameter array takes as its argument the questions.
 
@@ -201,7 +201,7 @@ function answerSetup(){
     answerSetup();
     gameOverAudio();
  	return true;
-    
+
 
 }
 
@@ -216,7 +216,7 @@ function selectGame2(){
     return true;
 }
 
-function selectGame3(){ 
+function selectGame3(){
 
 	startButton.disabled = false;
  	startButton.onclick = function(){perfectTenseVerbShuffle()};
@@ -229,7 +229,7 @@ function selectGame3(){
 function selectGame4(){
 
 	startButton.disabled = false;
- 	startButton.onclick = function(){verbShuffle()};
+ 	startButton.onclick = function(){threeVerbTenseShuffle()};
  	startButton.innerHTML = "Click to Start " + game4Title;
     answerSetup();
     gameOverAudio();
@@ -239,9 +239,9 @@ function selectGame4(){
 
 
 
- 
 
-	
+
+
 
 function presentTenseVerbShuffle(){
 
@@ -251,21 +251,21 @@ countDownTimer();
 
 
 startButton.disabled = true;
- 
+
 
 shuffle(verbsFirst);
 shuffle(verbsFirstPer);
- 
+
 shuffle(perEndingsFirst);
 
 shuffle(perEndingsFirstImp);
 shuffle(perEndingsFirstPerfect);
 
- 
+
 
 shuffle(answers);
 
- 
+
 
 
 
@@ -292,7 +292,7 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFir
 	resetAnswerColors();
 
      enableButtons();
-     
+
 
 
      //responseButton.innerHTML = "Hint!";
@@ -301,8 +301,8 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFir
 
 
      //if (answerOne.value == "1") {document.getElementById("boxTwo").innerHTML = "HI!");}
-   
-   
+
+
      //var newArray = shuffle(questions);
 
  	decrementCount();
@@ -318,21 +318,21 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFir
 
 		startButton.innerHTML = "Select a New Game!";
 
-    	 
-    
-    	
+
+
+
 		answerOne.innerHTML = game1Title;
 		answerTwo.innerHTML = game2Title;
 		answerThree.innerHTML = game3Title;
 		answerFour.innerHTML = game4Title;
-		
+
 		document.getElementById("boxThree").innerHTML = "Score";
 		responseButton.innerHTML = "You earned " + points + " points!";
 		points = 0;
 
 		stopTimer();
 		document.getElementById("boxOne").innerHTML = "Timer";
-		
+
 		answerOne.onclick = function(){selectGame1()};
 		answerTwo.onclick = function(){selectGame2()};
 		answerThree.onclick = function(){selectGame3()};
@@ -345,19 +345,19 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFir
 
     	//startButton.innerHTML = "Start a New Game!";
     	//startButton.disabled = false;
-    	
+
 		//answerOne.innerHTML = "";
 		//answerTwo.innerHTML = "";
 		//answerThree.innerHTML = "";
 		//answerFour.innerHTML = "";
-		
+
 		//document.getElementById("boxThree").innerHTML = "Score";
 		//responseButton.innerHTML = "Try to beat your score of " + points + " points!";
 		//points = 0;
 
 		//stopTimer();
 		//document.getElementById("boxOne").innerHTML = "Timer";
-		
+
 
 		//answerOne.onclick = function(){clickedAnswerOne()};
 		//answerTwo.onclick = function(){clickedAnswerTwo()};
@@ -365,11 +365,11 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFir
 		//answerFour.onclick = function(){clickedAnswerFour()};
 
 		//resetGame();
-		//resetSuffleQuestions(); 
+		//resetSuffleQuestions();
 		//count = 11;
-    } 
+    }
 
-	  
+
 
 }
 
@@ -382,24 +382,24 @@ countDownTimer();
 
 
 startButton.disabled = true;
- 
+
 
 shuffle(verbsFirst);
 shuffle(verbsFirstPer);
- 
+
 shuffle(perEndingsFirst);
 
 shuffle(perEndingsFirstImp);
 shuffle(perEndingsFirstPerfect);
 
- 
+
 
 shuffle(answers);
 
- 
 
 
- 
+
+
 
 function shuffleFirstConImpTenseVerbs(){
 document.getElementById("startButton").innerHTML =  verbsFirst[0][0]  + perEndingsFirstImp[0][0] ;
@@ -417,14 +417,14 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirstImp[3][1] + verbs
 
 shuffleFirstConImpTenseVerbs();
 
- 
+
 
 
 
 	resetAnswerColors();
 
      enableButtons();
-     
+
 
 
      //responseButton.innerHTML = "Hint!";
@@ -432,7 +432,7 @@ shuffleFirstConImpTenseVerbs();
      //responseButton.disabled = false;
 
 
-      
+
 
  	decrementCount();
 
@@ -448,30 +448,30 @@ shuffleFirstConImpTenseVerbs();
 
 		startButton.innerHTML = "Select a New Game!";
 
-    	 
-    
-    	
+
+
+
 		answerOne.innerHTML = game1Title;
 		answerTwo.innerHTML = game2Title;
 		answerThree.innerHTML = game3Title;
 		answerFour.innerHTML = game4Title;
-		
+
 		document.getElementById("boxThree").innerHTML = "Score";
 		responseButton.innerHTML = "You earned " + points + " points!";
 		points = 0;
 
 		stopTimer();
 		document.getElementById("boxOne").innerHTML = "Timer";
-		
+
 		answerOne.onclick = function(){selectGame1()};
 		answerTwo.onclick = function(){selectGame2()};
 		answerThree.onclick = function(){selectGame3()};
 		answerFour.onclick = function(){selectGame4()};
 
 		count = 11;
-    } 
+    }
 
-	  
+
 
 }
 
@@ -484,21 +484,21 @@ countDownTimer();
 
 
 startButton.disabled = true;
- 
+
 
 shuffle(verbsFirst);
 shuffle(verbsFirstPer);
- 
+
 shuffle(perEndingsFirst);
 
 shuffle(perEndingsFirstImp);
 shuffle(perEndingsFirstPerfect);
 
- 
+
 
 shuffle(answers);
 
- 
+
 
 function shuffleFirstConPerfectTenseVerbs(){
 document.getElementById("startButton").innerHTML =  verbsFirstPer[0][0]  + perEndingsFirstPerfect[0][0] ;
@@ -513,8 +513,8 @@ document.getElementById(answers[2]).innerHTML = perEndingsFirstPerfect[2][1] + v
 
 document.getElementById(answers[3]).innerHTML = perEndingsFirstPerfect[3][1] + verbsFirstPer[0][1]  ;
 }
- 
- 
+
+
 
 shuffleFirstConPerfectTenseVerbs();
 
@@ -523,7 +523,7 @@ shuffleFirstConPerfectTenseVerbs();
 	resetAnswerColors();
 
      enableButtons();
-     
+
 
 
      //responseButton.innerHTML = "Hint!";
@@ -532,8 +532,8 @@ shuffleFirstConPerfectTenseVerbs();
 
 
      //if (answerOne.value == "1") {document.getElementById("boxTwo").innerHTML = "HI!");}
-   
-   
+
+
      //var newArray = shuffle(questions);
 
  	decrementCount();
@@ -550,30 +550,177 @@ shuffleFirstConPerfectTenseVerbs();
 
 		startButton.innerHTML = "Select a New Game!";
 
-    	 
-    
-    	
+
+
+
 		answerOne.innerHTML = game1Title;
 		answerTwo.innerHTML = game2Title;
 		answerThree.innerHTML = game3Title;
 		answerFour.innerHTML = game4Title;
-		
+
 		document.getElementById("boxThree").innerHTML = "Score";
 		responseButton.innerHTML = "You earned " + points + " points!";
 		points = 0;
 
 		stopTimer();
 		document.getElementById("boxOne").innerHTML = "Timer";
-		
+
 		answerOne.onclick = function(){selectGame1()};
 		answerTwo.onclick = function(){selectGame2()};
 		answerThree.onclick = function(){selectGame3()};
 		answerFour.onclick = function(){selectGame4()};
 
 		count = 11;
-    } 
+    }
 
-	  
+
+
+}
+
+
+
+
+
+function threeVerbTenseShuffle(){
+
+countDownTimer();
+	timeleft = 15;
+	countdown = setInterval(countDownTimer,1000);
+
+
+startButton.disabled = true;
+
+
+shuffle(verbsFirst);
+shuffle(verbsFirstPer);
+
+shuffle(perEndingsFirst);
+
+shuffle(perEndingsFirstImp);
+shuffle(perEndingsFirstPerfect);
+
+
+shuffle(answers);
+
+
+
+function shuffleFirstConPresTenseVerbs(){
+document.getElementById("startButton").innerHTML =  verbsFirst[0][0]  + perEndingsFirst[0][0] ;
+
+
+document.getElementById(answers[0]).innerHTML = perEndingsFirst[0][1] + verbsFirst[0][1]  ;
+
+
+document.getElementById(answers[1]).innerHTML = perEndingsFirst[1][1] + verbsFirst[0][1]  ;
+
+document.getElementById(answers[2]).innerHTML = perEndingsFirst[2][1] + verbsFirst[0][1]  ;
+
+document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFirst[0][1]  ;
+}
+
+
+ 
+
+
+function shuffleFirstConImpTenseVerbs(){
+document.getElementById("startButton").innerHTML =  verbsFirst[0][0]  + perEndingsFirstImp[0][0] ;
+
+
+document.getElementById(answers[0]).innerHTML = perEndingsFirstImp[0][1] + verbsFirst[0][1]  ;
+
+
+document.getElementById(answers[1]).innerHTML = perEndingsFirstImp[1][1] + verbsFirst[0][1]  ;
+
+document.getElementById(answers[2]).innerHTML = perEndingsFirstImp[2][1] + verbsFirst[0][1]  ;
+
+document.getElementById(answers[3]).innerHTML = perEndingsFirstImp[3][1] + verbsFirst[0][1]  ;
+}
+
+
+
+
+
+function shuffleFirstConPerfectTenseVerbs(){
+document.getElementById("startButton").innerHTML =  verbsFirstPer[0][0]  + perEndingsFirstPerfect[0][0] ;
+
+
+document.getElementById(answers[0]).innerHTML = perEndingsFirstPerfect[0][1] + verbsFirstPer[0][1]  ;
+
+
+document.getElementById(answers[1]).innerHTML = perEndingsFirstPerfect[1][1] + verbsFirstPer[0][1]  ;
+
+document.getElementById(answers[2]).innerHTML = perEndingsFirstPerfect[2][1] + verbsFirstPer[0][1]  ;
+
+document.getElementById(answers[3]).innerHTML = perEndingsFirstPerfect[3][1] + verbsFirstPer[0][1]  ;
+}
+
+
+
+
+
+var randomNounIndex = Math.floor(Math.random() * 3);
+var mixUp = [shuffleFirstConPerfectTenseVerbs, shuffleFirstConImpTenseVerbs, shuffleFirstConPresTenseVerbs];
+
+mixUp[randomNounIndex]();
+
+
+
+
+
+	resetAnswerColors();
+
+     enableButtons();
+
+
+
+     //responseButton.innerHTML = "Hint!";
+
+     //responseButton.disabled = false;
+
+
+     //if (answerOne.value == "1") {document.getElementById("boxTwo").innerHTML = "HI!");}
+
+
+     //var newArray = shuffle(questions);
+
+ 	decrementCount();
+
+
+
+
+
+
+	if (count == 0){
+
+
+		gameOverAudio();
+
+		startButton.innerHTML = "Select a New Game!";
+
+
+
+
+		answerOne.innerHTML = game1Title;
+		answerTwo.innerHTML = game2Title;
+		answerThree.innerHTML = game3Title;
+		answerFour.innerHTML = game4Title;
+
+		document.getElementById("boxThree").innerHTML = "Score";
+		responseButton.innerHTML = "You earned " + points + " points!";
+		points = 0;
+
+		stopTimer();
+		document.getElementById("boxOne").innerHTML = "Timer";
+
+		answerOne.onclick = function(){selectGame1()};
+		answerTwo.onclick = function(){selectGame2()};
+		answerThree.onclick = function(){selectGame3()};
+		answerFour.onclick = function(){selectGame4()};
+
+		count = 11;
+    }
+
+
 
 }
 
@@ -582,9 +729,9 @@ shuffleFirstConPerfectTenseVerbs();
 
 
 
- 
 
- 
+
+
 
 
    function resetAnswerColors(){
@@ -605,9 +752,9 @@ shuffleFirstConPerfectTenseVerbs();
 	answerFour.style.color = "black";
 
 }
-   
 
- 
+
+
 
 function enableButtons(){
 
@@ -624,20 +771,20 @@ function disableButtons(){
 		answerThree.disabled = true;
 		answerFour.disabled = true;
 }
- 
-
- 
 
 
- 
+
+
+
+
 
 function clickedAnswerOne(){
 
-	   
 
 
-	if (document.getElementById("answerOne").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1] || 
-		document.getElementById("answerOne").innerHTML ==perEndingsFirstImp[0][1] + verbsFirst[0][1] || 
+
+	if (document.getElementById("answerOne").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1] ||
+		document.getElementById("answerOne").innerHTML ==perEndingsFirstImp[0][1] + verbsFirst[0][1] ||
 		document.getElementById("answerOne").innerHTML ==perEndingsFirstPerfect[0][1] + verbsFirstPer[0][1]){
 
 		correctAnswerAudio();
@@ -651,19 +798,19 @@ function clickedAnswerOne(){
 		answerOne.style.backgroundColor = "yellow";
 		answerOne.style.border = "yellow";
 		document.getElementById("A1").style.backgroundColor = "yellow";
-		
+
 		responseButton.innerHTML = "Optime!";
 		responseButton.style.color = "yellow";
 		startButton.innerHTML = "Next Question!";
 		startButton.disabled = false;
-		 
-		
+
+
 		unHideResponseNext();
-		 
+
 
 
 	} else {
-		
+
 		wrongAnswerAudio();
 		//clickedWrongAnswerOneAudio();
 		points -= pointsPerCorrectAnswer/2;
@@ -676,18 +823,18 @@ function clickedAnswerOne(){
 		responseButton.style.color = "black";
 
 		responseButton.innerHTML = "Eheu!";
-		
-	}	
+
+	}
 
 }
 
 
 function clickedAnswerTwo(){
 
-	 
 
-	if (document.getElementById("answerTwo").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1]|| 
-		document.getElementById("answerTwo").innerHTML == perEndingsFirstImp[0][1] + verbsFirst[0][1] || 
+
+	if (document.getElementById("answerTwo").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1]||
+		document.getElementById("answerTwo").innerHTML == perEndingsFirstImp[0][1] + verbsFirst[0][1] ||
 		document.getElementById("answerTwo").innerHTML == perEndingsFirstPerfect[0][1] + verbsFirstPer[0][1]){
 
 		correctAnswerAudio();
@@ -701,18 +848,18 @@ function clickedAnswerTwo(){
 		answerTwo.style.backgroundColor = "yellow";
 		answerTwo.style.border = "yellow";
 		document.getElementById("A2").style.backgroundColor = "yellow";
-		
+
 		responseButton.innerHTML = "Optime!";
-		responseButton.style.color = "yellow";	
+		responseButton.style.color = "yellow";
 		startButton.innerHTML = "Next Question!";
 		startButton.disabled = false;
-		 
-		
+
+
 		unHideResponseNext();
-	
+
 
 	} else {
-		
+
 		wrongAnswerAudio();
 		//clickedWrongAnswerTwoAudio();
 		points -= pointsPerCorrectAnswer/2;
@@ -725,16 +872,16 @@ function clickedAnswerTwo(){
 		responseButton.style.color = "black";
 
 		responseButton.innerHTML = "Eheu!";
-		
+
 	}
 }
 
 function clickedAnswerThree(){
 
-	 
 
-	if (document.getElementById("answerThree").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1]|| 
-		document.getElementById("answerThree").innerHTML == perEndingsFirstImp[0][1] + verbsFirst[0][1] || 
+
+	if (document.getElementById("answerThree").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1]||
+		document.getElementById("answerThree").innerHTML == perEndingsFirstImp[0][1] + verbsFirst[0][1] ||
 		document.getElementById("answerThree").innerHTML == perEndingsFirstPerfect[0][1] + verbsFirstPer[0][1]){
 
 		correctAnswerAudio();
@@ -749,17 +896,17 @@ function clickedAnswerThree(){
 		answerThree.style.border = "yellow";
 		document.getElementById("A3").style.backgroundColor = "yellow";
 		responseButton.innerHTML = "Optime!";
-		
-		responseButton.style.color = "yellow";	
+
+		responseButton.style.color = "yellow";
 		startButton.innerHTML = "Next Question!";
 		startButton.disabled = false;
-		 
-		
+
+
 		unHideResponseNext();
-		
+
 
 	} else {
-		
+
 		wrongAnswerAudio();
 		//clickedWrongAnswerThreeAudio();
 		points -= pointsPerCorrectAnswer/2;
@@ -772,7 +919,7 @@ function clickedAnswerThree(){
 		responseButton.style.color = "black";
 
 		responseButton.innerHTML = "Eheu!";
-		
+
 	}
 
 }
@@ -781,8 +928,8 @@ function clickedAnswerFour(){
 
 
 
-	if (document.getElementById("answerFour").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1]|| 
-		document.getElementById("answerFour").innerHTML == perEndingsFirstImp[0][1] + verbsFirst[0][1] || 
+	if (document.getElementById("answerFour").innerHTML == perEndingsFirst[0][1] + verbsFirst[0][1]||
+		document.getElementById("answerFour").innerHTML == perEndingsFirstImp[0][1] + verbsFirst[0][1] ||
 		document.getElementById("answerFour").innerHTML == perEndingsFirstPerfect[0][1] + verbsFirstPer[0][1]){
 
 		correctAnswerAudio();
@@ -797,17 +944,17 @@ function clickedAnswerFour(){
 		answerFour.style.border = "yellow";
 		document.getElementById("A4").style.backgroundColor = "yellow";
 		responseButton.innerHTML = "Optime!";
-		
-		responseButton.style.color = "yellow";	
+
+		responseButton.style.color = "yellow";
 		startButton.innerHTML = "Next Question!";
 		startButton.disabled = false;
-		
-		
+
+
 		unHideResponseNext();
-		
+
 
 	} else {
-		
+
 		wrongAnswerAudio();
 		//clickedWrongAnswerFourAudio();
 		points -= pointsPerCorrectAnswer/2;
@@ -820,10 +967,8 @@ function clickedAnswerFour(){
 		responseButton.style.color = "black";
 
 		responseButton.innerHTML = "Eheu!";
-		
+
 	}
 
 
 }
-
-
