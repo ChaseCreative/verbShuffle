@@ -45,9 +45,9 @@ function gameFourTitle(){return game4Title;}
 
 
 
-var verbsFirst = [["Am", "loving"], ["labor", "working"], ["habit", "living"], ["cogit", "thinking"], ["cant", "singing"], ["d", "giving"]];
+var verbsFirst = [["Am", "loving"], ["labor", "working"], ["habit", "living"], ["cogit", "thinking"], ["cant", "singing"], ["d", "giving"],["laud", "praising"],["serv", "saving"],["voc", "calling"],["err", "wandering"], ["conserv", "preserving"]];
 
-var verbsFirstPer = [["Amav", "loved"], ["laborav", "worked"], ["habitav", "lived"], ["cogitav", "thought"], ["cantav", "sang"], ["ded", "gave"]];
+var verbsFirstPer = [["Amav", "loved"], ["laborav", "worked"], ["habitav", "lived"], ["cogitav", "thought"], ["cantav", "sang"], ["ded", "gave"],["laudav", "praised"],["servav", "saved"],["vocav", "called"],["errav", "wandered"],["conservav", "preserved"]];
 
 
 var perEndingsFirst = [["ō", "I am "], ["ās", "You are "], ["at", "She/he/it is "], ["āmus", "We are "], ["ātis", "Ya'll are "], ["ant", "They are "]];
@@ -619,7 +619,7 @@ document.getElementById(answers[3]).innerHTML = perEndingsFirst[3][1] + verbsFir
 }
 
 
- 
+
 
 
 function shuffleFirstConImpTenseVerbs(){
